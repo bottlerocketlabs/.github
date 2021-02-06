@@ -36,6 +36,19 @@ brew install bottlerocketlabs/apps/localpod
 brew install bottlerocketlabs/apps/rpbcopy
 ```
 
+### Debian/Ubuntu package
+```
+curl https://bottlerocketlabs.jfrog.io/artifactory/api/gpg/key/public | sudo apt-key add -
+echo "deb https://bottlerocketlabs.jfrog.io/artifactory/deb all main" | sudo tee /etc/apt/sources.list.d/bottlerocketlabs.list
+sudo apt-get update
+
+sudo apt-get install -y pair
+sudo apt-get install -y gitlab
+sudo apt-get install -y dotfiles
+sudo apt-get install -y localpod
+sudo apt-get install -y rpbcopy
+```
+
 ### Download binary to current directory
 ```share 
 mkdir -p "${HOME}/bin" && cd "${HOME}/bin"
