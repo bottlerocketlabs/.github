@@ -38,6 +38,7 @@ brew install bottlerocketlabs/apps/rpbcopy
 
 ### Debian/Ubuntu package
 ```sh
+# need sudo curl gpg if not already
 curl https://bottlerocketlabs.jfrog.io/artifactory/api/gpg/key/public | sudo apt-key add -
 echo "deb https://bottlerocketlabs.jfrog.io/artifactory/deb all main" | sudo tee /etc/apt/sources.list.d/bottlerocketlabs.list
 sudo apt-get update
@@ -51,15 +52,16 @@ sudo apt-get install -y rpbcopy
 
 ### Alpine linux package
 ```sh
+# need sudo wget if not already
 sudo wget -O /etc/apk/keys/bottlerocketlabs.rsa.pub https://bottlerocketlabs.jfrog.io/artifactory/api/security/keypair/public/repositories/alpine
 echo "https://bottlerocketlabs.jfrog.io/artifactory/alpine/edge/main" | sudo tee -a /etc/apk/repositories
 
 sudo apk update
-sudoa apk add --no-cache pair
-sudoa apk add --no-cache gitlab
-sudoa apk add --no-cache dotfiles
-sudoa apk add --no-cache localpod
-sudoa apk add --no-cache rpbcopy
+sudo apk add --no-cache pair
+sudo apk add --no-cache gitlab
+sudo apk add --no-cache dotfiles
+sudo apk add --no-cache localpod
+sudo apk add --no-cache rpbcopy
 ```
 
 ### Download binary to current directory
