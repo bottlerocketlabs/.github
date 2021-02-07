@@ -37,7 +37,7 @@ brew install bottlerocketlabs/apps/rpbcopy
 ```
 
 ### Debian/Ubuntu package
-```
+```sh
 curl https://bottlerocketlabs.jfrog.io/artifactory/api/gpg/key/public | sudo apt-key add -
 echo "deb https://bottlerocketlabs.jfrog.io/artifactory/deb all main" | sudo tee /etc/apt/sources.list.d/bottlerocketlabs.list
 sudo apt-get update
@@ -49,8 +49,21 @@ sudo apt-get install -y localpod
 sudo apt-get install -y rpbcopy
 ```
 
+### Alpine linux package
+```sh
+sudo wget -O /etc/apk/keys/bottlerocketlabs.rsa.pub https://bottlerocketlabs.jfrog.io/artifactory/api/security/keypair/public/repositories/alpine
+echo "https://bottlerocketlabs.jfrog.io/artifactory/alpine/edge/main" | sudo tee -a /etc/apk/repositories
+
+sudo apk update
+sudoa apk add --no-cache pair
+sudoa apk add --no-cache gitlab
+sudoa apk add --no-cache dotfiles
+sudoa apk add --no-cache localpod
+sudoa apk add --no-cache rpbcopy
+```
+
 ### Download binary to current directory
-```share 
+```sh
 mkdir -p "${HOME}/bin" && cd "${HOME}/bin"
 echo 'PATH="${HOME}/bin:${PATH}"' >> "${HOME}/.profile"
 
